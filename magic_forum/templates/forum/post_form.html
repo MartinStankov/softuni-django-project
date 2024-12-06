@@ -1,0 +1,56 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/post_form.css' %}">
+<div class="form-container">
+    <h1>
+        {% if form.instance.pk %}
+            Edit Post
+        {% else %}
+            {% if is_anonymous_post %}
+                Create Anonymous Post
+            {% else %}
+                Create Personal Post
+            {% endif %}
+        {% endif %}
+    </h1>
+    
+    <form method="post" class="post-form">
+        {% csrf_token %}
+        {% for field in form %}
+{#            {% if field.name != 'is_anonymous' or not is_anonymous_post %}#}
+                {% if field.name != 'is_anonymous' %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="help-text">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% if field.errors %}
+                        <div class="error-message">
+                            {% for error in field.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="form-actions">
+            <button type="submit" class="submit-button">
+                {% if form.instance.pk %}
+                    Update Post
+                {% else %}
+                    {% if is_anonymous_post %}
+                        Submit Anonymous Post
+                    {% else %}
+                        Create Post
+                    {% endif %}
+                {% endif %}
+            </button>
+            <a href="{% url 'post-list' %}" class="cancel-button">Cancel</a>
+        </div>
+    </form>
+</div>
+    
+{% endblock %}

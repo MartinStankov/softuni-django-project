@@ -1,0 +1,28 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/login.css' %}">
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>Login</h1>
+            <div class="auth-meta">
+                <span class="welcome">Welcome back!</span>
+            </div>
+        </div>
+        
+        <div class="auth-content">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="auth-actions">
+                    <button type="submit" class="action-button submit">Login</button>
+                    <a href="{% url 'register' %}" class="action-button register">Register Instead</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

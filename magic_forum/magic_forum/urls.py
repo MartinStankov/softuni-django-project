@@ -20,5 +20,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('magic_forum.common.urls'))
+    path('', include('magic_forum.admin_dashboard.urls')),
+    path('', include('magic_forum.comments.urls')),
+    path('', include('magic_forum.notes.urls')),
+    path('', include('magic_forum.posts.urls')),
+    path('', include('magic_forum.users.urls')),
 ]

@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CommonConfig(AppConfig):
+class CommentsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'magic_forum.common'
+    name = 'magic_forum.comments'

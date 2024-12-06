@@ -1,0 +1,24 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/logout.css' %}">
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>Logged Out</h1>
+            <div class="auth-meta">
+                <span class="welcome">See you soon!</span>
+            </div>
+        </div>
+        
+        <div class="auth-content">
+            <p>You have been successfully logged out.</p>
+            <div class="auth-actions">
+                <a href="{% url 'login' %}" class="action-button submit">Login Again</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

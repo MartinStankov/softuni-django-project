@@ -1,0 +1,127 @@
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.profile-header h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.profile-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-right: 0.5rem;
+}
+
+.bio-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #eee;
+}
+
+.bio-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.post-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-title {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.post-title:hover {
+    color: #3498db;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #e9ecef;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: #495057;
+    margin: 0.5rem 0;
+}
+
+.post-date {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.no-content {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.settings-button {
+    display: inline-block;
+    background-color: #4a4a4a;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    width: fit-content;
+}
+
+.settings-button:hover {
+    background-color: #2c3e50;
+    color: white !important;
+    text-decoration: none;
+}
+

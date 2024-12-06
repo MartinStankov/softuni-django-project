@@ -1,0 +1,43 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/profile.css' %}">
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>{{ user.username }}'s Profile</h1>
+    </div>
+
+    <div class="profile-grid">
+        <div class="profile-card">
+            <div class="profile-info">
+                <p><span class="info-label">Username: {{ user.username }}</span></p>
+                <p><span class="info-label">Email:</span> {{ user.email }}</p>
+                <p><span class="info-label">Posts Count:</span> {{ user.post_set.count }}</p>
+                {% if user.userprofile.bio %}
+                    <div class="bio-section">
+                        <h2>Bio</h2>
+                        <p>{{ user.userprofile.bio }}</p>
+                    </div>
+                {% endif %}
+                <a href="{% url 'settings' %}" class="settings-button">Settings</a>
+            </div>
+        </div>
+
+        <div class="user-posts">
+            <h2>Your Posts</h2>
+            <div class="posts-grid">
+                {% for post in user.post_set.all %}
+                    <article class="post-card">
+                        <h3><a href="{% url 'post-detail' post.pk %}" class="post-title">{{ post.title }}</a></h3>
+                        <span class="category-tag">{{ post.category.name }}</span>
+                        <p class="post-date">Posted: {{ post.created_at|date:"F d, Y" }}</p>
+                    </article>
+                {% empty %}
+                    <p class="no-content">You haven't created any posts yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

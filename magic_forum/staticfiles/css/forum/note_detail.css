@@ -1,0 +1,74 @@
+.note-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.note-detail {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.note-header h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.note-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.date.updated {
+    color: #28a745;
+}
+
+.note-content {
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #eee;
+}
+
+.action-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.action-button.edit {
+    background: #007bff;
+    color: white;
+}
+
+.action-button.edit:hover {
+    background: #0056b3;
+}
+
+.action-button.delete {
+    background: #dc3545;
+    color: white;
+}
+
+.action-button.delete:hover {
+    background: #c82333;
+}

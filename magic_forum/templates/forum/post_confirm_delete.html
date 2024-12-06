@@ -1,0 +1,26 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/post_confirm_delete.css' %}">
+<div class="delete-container">
+    <div class="delete-card">
+        <div class="delete-header">
+            <h1>Delete Post</h1>
+        </div>
+        
+        <div class="delete-content">
+            <p>Are you sure you want to delete "<span class="highlight">{{ object.title }}</span>"?</p>
+            
+            <form method="post" class="delete-form">
+                {% csrf_token %}
+                <div class="delete-actions">
+                    <button type="submit" class="action-button confirm">Confirm Delete</button>
+                    <a href="{% url 'post-detail' object.pk %}" class="action-button cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

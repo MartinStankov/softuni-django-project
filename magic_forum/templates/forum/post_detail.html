@@ -1,0 +1,90 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/post_detail.css' %}">
+<div class="post-detail-container">
+    <article class="post-detail">
+        <div class="post-header">
+            <h1>{{ post.title }}</h1>
+            <div class="post-meta">
+{#                <span class="category">{{ post.category.name }}</span>#}
+                <span class="category">{{ post.get_category_display }}</span>
+                <span class="date">Posted: {{ post.created_at|date:"F d, Y" }}</span>
+                {% if post.updated_at != post.created_at %}
+                    <span class="date">Updated: {{ post.updated_at|date:"F d, Y" }}</span>
+                {% endif %}
+                {% if not post.is_anonymous %}
+                    <span class="author">By: {{ post.author.username }}</span>
+                {% else %}
+                    <span class="author anonymous">Anonymous Post</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="post-content">
+            {{ post.content|linebreaks }}
+        </div>
+
+        {% if user == post.author or user.is_staff %}
+            <div class="post-actions">
+                <a href="{% url 'post-update' post.pk %}" class="action-button edit">Edit Post</a>
+                <a href="{% url 'post-delete' post.pk %}" class="action-button delete">Delete Post</a>
+            </div>
+        {% endif %}
+    
+        <div class="comments-section">
+            <h2>Comments</h2>
+        
+            <div class="comment-form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ comment_form.content }}
+                    </div>
+                    {% if user.is_authenticated %}
+                        {% if post.is_anonymous %}
+                            <div class="form-group checkbox-group">
+                                {{ comment_form.is_anonymous }}
+                                <label for="{{ comment_form.is_anonymous.id_for_label }}">
+                                    Post anonymously
+                                </label>
+                            </div>
+                        {% endif %}
+                        <button type="submit" class="action-button submit">Post Comment</button>
+                    {% else %}
+                        {% if post.is_anonymous %}
+                            <p class="anonymous-note">Your comment will be posted anonymously and will be reviewed by moderators.</p>
+                            <button type="submit" class="action-button submit">Submit Anonymous Comment</button>
+                        {% else %}
+                            <p class="login-note">Please <a href="{% url 'login' %}">login</a> to comment on this post.</p>
+                        {% endif %}
+                    {% endif %}
+                </form>
+            </div>
+            
+            <div class="comments-list">
+                {% for comment in comments %}
+                    <div class="comment {% if comment.is_anonymous %}anonymous-comment{% endif %}">
+                        <div class="comment-meta">
+                            <div class="comment-info">
+                                {% if comment.is_anonymous %}
+                                    <span class="comment-author anonymous">Anonymous</span>
+                                {% else %}
+                                    <span class="comment-author">{{ comment.author.username }}</span>
+                                {% endif %}
+                                <span class="comment-date">{{ comment.created_at|date:"F d, Y H:i" }}</span>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            {{ comment.content|linebreaks }}
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="no-comments">No comments yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+</div>
+    
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/anonymous_post_form.css' %}">
+<div class="form-container">
+    <h1>Create Anonymous Post</h1>
+    
+    <form method="post" class="post-form">
+        {% csrf_token %}
+        {% for field in form %}
+            {% if field.name != 'is_anonymous' %}  <!-- Skip the is_anonymous field -->
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="help-text">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% if field.errors %}
+                        <div class="error-message">
+                            {% for error in field.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="form-actions">
+            <button type="submit" class="submit-button">Submit Anonymous Post</button>
+            <a href="{% url 'post-list' %}" class="cancel-button">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

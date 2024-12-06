@@ -1,0 +1,28 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/forum/note_detail.css' %}">
+<div class="note-container">
+    <article class="note-detail">
+        <div class="note-header">
+            <h1>{{ note.subject }}</h1>
+            <div class="note-meta">
+                <span class="date">Created: {{ note.created_at|date:"F d, Y" }}</span>
+                {% if note.updated_at != note.created_at %}
+                    <span class="date updated">Updated: {{ note.updated_at|date:"F d, Y" }}</span>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="note-content">
+            {{ note.content|linebreaks }}
+        </div>
+        
+        <div class="note-actions">
+            <a href="{% url 'note-update' note.pk %}" class="action-button edit">Edit Note</a>
+            <a href="{% url 'note-delete' note.pk %}" class="action-button delete">Delete Note</a>
+        </div>
+    </article>
+</div>
+    
+{% endblock %}

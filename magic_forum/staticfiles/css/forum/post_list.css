@@ -1,0 +1,150 @@
+.post-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.search-section {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+}
+
+.search-inputs {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    min-width: 300px;
+}
+
+.category-select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 200px;
+}
+
+.search-button {
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 100px;
+}
+
+.search-button:hover {
+    background: #0056b3;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.post-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+    margin-bottom: 1rem;
+}
+
+.post-title {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.post-title:hover {
+    color: #3498db;
+}
+
+.post-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #e9ecef;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: #495057;
+    margin-top: 0.5rem;
+}
+
+.post-meta {
+    font-size: 0.875rem;
+    color: #6c757d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-author.anonymous {
+    color: #dc3545;
+}
+
+.pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.page-link {
+    padding: 0.5rem 1rem;
+    background: #f8f9fa;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.page-link:hover {
+    background: #e9ecef;
+}
+
+.current-page {
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+.no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+}

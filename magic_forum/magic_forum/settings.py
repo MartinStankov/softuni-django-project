@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "magic_forum.common.apps.CommonConfig"
+    "magic_forum.admin_dashboard.apps.AdminDashboardConfig",
+    "magic_forum.comments.apps.CommentsConfig",
+    "magic_forum.notes.apps.NotesConfig",
+    "magic_forum.posts.apps.PostsConfig",
+    "magic_forum.users.apps.UsersConfig"
 ]
 
 MIDDLEWARE = [
@@ -76,9 +80,13 @@ WSGI_APPLICATION = 'magic_forum.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "softuni_django_project",
+        "USER": "postgres",
+        "PASSWORD": "password1",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
@@ -118,6 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = (BASE_DIR / 'staticfiles', )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
