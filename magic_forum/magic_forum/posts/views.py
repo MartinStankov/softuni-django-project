@@ -136,6 +136,17 @@ class PostCreateView(CreateView):
     template_name = 'forum/post_form.html'
     success_url = reverse_lazy('post-list')
 
+    def dispatch(self, request, *args, **kwargs):
+        """Handle authentication check before view execution"""
+        post_type = request.GET.get('type')
+
+        # If it's not an anonymous post and user is not authenticated the permission to create personal post is removed
+        if post_type != 'anonymous' and not request.user.is_authenticated:
+            messages.error(request, 'You must be logged in to create personal posts.')
+            return redirect('login')
+
+        return super().dispatch(request, *args, **kwargs)
+
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         post_type = self.request.GET.get('type')
