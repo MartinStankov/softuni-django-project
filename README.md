@@ -45,3 +45,47 @@ If the user successfully logs out he sees the following:
 
 ![Successfully Logged Out Image](readme_images/after_logout_image.png)
 
+The user now has the option to access his note list which is empty at first and which is strictly personal to him and no one else can access it.
+
+![Empty Note List Image](readme_images/empty_note_list.png)
+
+The user can create his notes after clicking on "My notes" and then "Create New Note"
+
+![Create Note Image](readme_images/note_creation_form.png)
+
+If the user creates some notes, the note list will start looking like this:
+
+![Note List With Content Image](readme_images/note_list_with_content.png)
+
+The user can interact with the notes. He can edit them:
+
+![Edit Note Image](readme_images/note_edit_form.png)
+
+Or delete them:
+
+![Delete Note Image](readme_images/note_delete.png)
+
+He now has the option to create personal posts as well.
+
+![Create Personal Post image](readme_images/create_personal_post.png)
+
+The Home Page of the user also changes. Now it shows the personal posts as well, not only anonymous posts.
+
+![Home Page Logged In User Image](readme_images/home_page_logged_in_user.png)
+
+After the user creates a personal post he can view the post he created and he can also edit it:
+
+![Edit Personal Post](readme_images/post_owner_edit.png)
+
+Or delete it:
+
+![Delete Personal Post](readme_images/post_owner_delete.png)
+
+The user can now access his personal Profile.
+
+![User Profile](readme_images/user_profile_overview.png)
+
+He can also change either his username, email or password, after clicking the settings button on the Profile page.
+
+![User Profile Settings](readme_images/user_profile_settings.png)
+
