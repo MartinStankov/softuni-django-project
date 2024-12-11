@@ -98,7 +98,7 @@ The Admin has all the functionality that the normal user has, but he has a bit o
 
 When the Admin clicks on "Dashboard" he will be able to view and approve or delete anonymous posts, that are submitted for approval. If there are no posts waiting for approval, the page looks like this:
 
-![Admin Dashboard No Posts](readme_images/admin_dashboard_no_images.png)
+![Admin Dashboard No Posts](readme_images/admin_dashboard_no_posts.png)
 
 However, if there are posts, it will look like this:
 
