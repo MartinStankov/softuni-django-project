@@ -6,13 +6,42 @@ This is my SoftUni Django Project. It represents a forum, that can be used for n
 
 # Main Pages
 This is the home page of the freshly loaded application without any anonymous posts.
+
 ![Guest Home Page Without Posts](readme_images/guest_home_page_no_posts.png)
 
 However if there are posts, the guest will be able to see them like that:
+
 ![Guest Home Page With Posts](readme_images/guest_home_page_with_posts.png)
 
-He has the option to create a post from the navigation bar. After clicking on "Create Anonymous Post" the anonymous post form will appear and he will be able to submit his post for moderation.
+The user has the option to create a post from the navigation bar. After clicking on "Create Anonymous Post" the anonymous post form will appear and he will be able to submit his post for moderation.
+
 ![Create Anonymous Post](readme_images/create_anonymous_post_form.png)
 
-He should choose one of the following categories before proceeding, otherwise the user cannot submit the form.
+The user should choose one of the following categories before proceeding, otherwise the user cannot submit the form.
+
 ![Post Categories](readme_images/categories.png)
+
+If the user wants to use the full application and see all the personal posts and well and have the option to comment underneath them, he has to either log in:
+
+![Log In Image](readme_images/login_form.png)
+
+Or register:
+
+![Register Image](readme_images/register_form.png)
+
+After successful registration, the user receives a welcome message and is now able to access all the posts and create his notes.
+
+![Successful Registration Image](readme_images/after_successful_registration.png)
+
+If the user has an account and logs in, he receives a welcoming message and now can the use the full functionality of the application.
+
+![Successful Login Image](readme_images/after_login.png)
+
+And if the user decides to log out he is asked if he is sure that he wants to log out.
+
+![Log Out Prompt](readme_images/logout_confirmation.png)
+
+If the user successfully logs out he sees the following:
+
+![Successfully Logged Out Image](readme_images/after_logout_image.png)
+
