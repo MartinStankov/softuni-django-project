@@ -89,3 +89,37 @@ He can also change either his username, email or password, after clicking the se
 
 ![User Profile Settings](readme_images/user_profile_settings.png)
 
+
+# Admin Part
+
+The Admin has all the functionality that the normal user has, but he has a bit of extra stuff that he can do. This is how the admin home page looks:
+
+![Admin Home Page](readme_images/admin_home_page.png)
+
+When the Admin clicks on "Dashboard" he will be able to view and approve or delete anonymous posts, that are submitted for approval. If there are no posts waiting for approval, the page looks like this:
+
+![Admin Dashboard No Posts](readme_images/admin_dashboard_no_images.png)
+
+However, if there are posts, it will look like this:
+
+![Admin Dashboard With Posts](readme_images/admin_dashboard_with_posts_for_approval.png)
+
+The admin can view the post details and decide if he will approve it or delete it.
+
+![Admin Dashboard Post Details](readme_images/admin_dashboard_post_details.png)
+
+The admin also has the option to approve or reject comments on posts. Here's how it is without comments waiting for approval:
+
+![Admin Dashboard No Comments](readme_images/admin_dashboard_no_comments.png)
+
+And if there are comments, waiting for approval, it looks like this:
+
+![Admin Dashboard With Comments](readme_images/admin_dashboard_comment_section_with_comments.png)
+
+If the Admin approves a comment, a pop up shows that he approved the comment:
+
+![Admin Comment Approved](readme_images/admin_dashboard_comment_approved.png)
+
+And the same goes if he reject a comment:
+
+![Admin Comment Rejected](readme_images/admin_dashboard_comment_rejected.png)
