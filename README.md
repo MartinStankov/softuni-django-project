@@ -35,7 +35,7 @@ After successful registration, the user receives a welcome message and is now ab
 
 If the user has an account and logs in, he receives a welcoming message and now can the use the full functionality of the application.
 
-![Successful Login Image](readme_images/after_login.png)
+![Successful Login Image](readme_images/after_login_image.png)
 
 And if the user decides to log out he is asked if he is sure that he wants to log out.
 
